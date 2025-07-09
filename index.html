@@ -1,100 +1,107 @@
 
 <html>
 
-	<head>
-		<title>ENLACE DIRECTO TBK</title>
-		
+  <head>
+    <title>ENLACE DIRECTO TBK</title>
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 
 function changeText(texto){
-	// URL MI BANCO QA LIMPIO = https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1
-	// URL MI BANCO QA = https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1
-	// URL MI PAGO PROD = https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?"+texto+"&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1
-	// https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3
+  // URL MI BANCO QA LIMPIO = https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1
+  // URL MI BANCO QA = https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1
+  // URL MI PAGO PROD = https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?"+texto+"&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1
+  // https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3
      //let urlFinal = "https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3";
      let urlFinal = "https://mibanco3.web.app/"+texto;
      $("#urlChange").text(urlFinal);
      $("#urlClick").attr('href',urlFinal);
-}
+};
+
+function clickButton(){
+
+  changeText($("input").val());
+
+};
+
 $(document).ready(function(){
   $("input").change(function(){
-  	changeText($(this).val());
+    changeText($(this).val());
     // alert("The text has been changed."+$(this).val());
 
   });
 });
 </script>
 
-	</head>
-	<body style="background-color: white;">
-		<!--
-		<a href="bancochilemipago://"><h1 style="color: #ffffff">1- bancochilemipago://</h1></a>
-		<a href="bancochilemipago://PagoTBK?codigoSimpleQr=A7164946"><h1 style="color: #ffffff">2- bancochilemipago://PagoTBK?codigoSimpleQr=A7164946</h1></a>
-		<a href="bancochilemipago://?codigoSimpleQr=A7164946"><h1 style="color: #ffffff">3- bancochilemipago://?codigoSimpleQr=A7164946</h1></a>
+  </head>
+  <body style="background-color: white;">
+    <!--
+    <a href="bancochilemipago://"><h1 style="color: #ffffff">1- bancochilemipago://</h1></a>
+    <a href="bancochilemipago://PagoTBK?codigoSimpleQr=A7164946"><h1 style="color: #ffffff">2- bancochilemipago://PagoTBK?codigoSimpleQr=A7164946</h1></a>
+    <a href="bancochilemipago://?codigoSimpleQr=A7164946"><h1 style="color: #ffffff">3- bancochilemipago://?codigoSimpleQr=A7164946</h1></a>
 </br>
-		<h1 style="color: 'green'">BILLETERA</h1>
-		<a href="bancochilemipago://TarjetasDigitales?tab=2"><h1 style="color: #ffffff">TARJETAS DIGITALES</h1></a>
-		<a href="bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar"><h1 style="color: #ffffff">4- DEPP LINK MI BANCOO</h1></a>
-		
+    <h1 style="color: 'green'">BILLETERA</h1>
+    <a href="bancochilemipago://TarjetasDigitales?tab=2"><h1 style="color: #ffffff">TARJETAS DIGITALES</h1></a>
+    <a href="bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar"><h1 style="color: #ffffff">4- DEPP LINK MI BANCOO</h1></a>
+    
 </br>
-		<a href="https://mipago.page.link/PagoQR?showIngresarCodigoManual=true"><h1 style="color: #ffffff">Dynamic Link PagoQR con codigo manual</h1></a>
-		<a href="https://mipago.page.link/PagoQR?link=bancochilemipago://PagoTBK?codigoSimpleQr=A7164946&apn=cl.bancochile.mi_pago&ius=bancochilemipago://"><h1 style="color: #ffffff">DYNAMIC LINK CON CODIGO SIMPLE QR</h1></a>
+    <a href="https://mipago.page.link/PagoQR?showIngresarCodigoManual=true"><h1 style="color: #ffffff">Dynamic Link PagoQR con codigo manual</h1></a>
+    <a href="https://mipago.page.link/PagoQR?link=bancochilemipago://PagoTBK?codigoSimpleQr=A7164946&apn=cl.bancochile.mi_pago&ius=bancochilemipago://"><h1 style="color: #ffffff">DYNAMIC LINK CON CODIGO SIMPLE QR</h1></a>
 
 </br>
 </br>
-	
-		<!--<a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode%3DA0000001&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1"><h1 style="color: #ffffff">1- TEST con simpleCode%3DA0000001</h1></a>
-		<a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode=A1234567&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1"><h1 style="color: #ffffff">2- TEST con simpleCode=A1234567</h1></a>-->
-		<!--<a href="https://mipago.page.link/PagoQrTBK?simpleCode=A1234567"><h1 style="color: #ffffff">4- PagoQrTBK</h1></a>
-		
-		<a href="https://mipago2.page.link/PagoTBK?link=https://portales.bancochile.cl/personas/mi-pago-2-0/?simpleCode=A7164946&screen=PagoTBK"><h1 style="color: #ffffff">3- QA</h1></a>
+  
+    <!--<a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode%3DA0000001&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1"><h1 style="color: #ffffff">1- TEST con simpleCode%3DA0000001</h1></a>
+    <a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode=A1234567&apn=cl.bancochile.mi_pago&isi=915134450&ibi=cl.bancochile.mipago&efr=1"><h1 style="color: #ffffff">2- TEST con simpleCode=A1234567</h1></a>-->
+    <!--<a href="https://mipago.page.link/PagoQrTBK?simpleCode=A1234567"><h1 style="color: #ffffff">4- PagoQrTBK</h1></a>
+    
+    <a href="https://mipago2.page.link/PagoTBK?link=https://portales.bancochile.cl/personas/mi-pago-2-0/?simpleCode=A7164946&screen=PagoTBK"><h1 style="color: #ffffff">3- QA</h1></a>
 </br>
-</br>	-->
-		<!-- ESTO ES DE MI PAGO -->
+</br> -->
+    <!-- ESTO ES DE MI PAGO -->
 <!-- 
-		<h1 style="color: #ffffff">DeepLink Pago TBK</h1>
-		<a href="bancochilemipago://PagoTBK?codigoSimpleQr=A7164946"><h4 style="color: #ffffff">1- bancochilemipago://PagoTBK?codigoSimpleQr=A7164946</h4></a>
-		<a href="bancochilemipago://?codigoSimpleQr=A7164946"><h4 style="color: #ffffff">2- bancochilemipago://?codigoSimpleQr=A7164946</h4></a>
+    <h1 style="color: #ffffff">DeepLink Pago TBK</h1>
+    <a href="bancochilemipago://PagoTBK?codigoSimpleQr=A7164946"><h4 style="color: #ffffff">1- bancochilemipago://PagoTBK?codigoSimpleQr=A7164946</h4></a>
+    <a href="bancochilemipago://?codigoSimpleQr=A7164946"><h4 style="color: #ffffff">2- bancochilemipago://?codigoSimpleQr=A7164946</h4></a>
 
-	</br>
-	</br>
-		<h1 style="color: #ffffff">DeepLink BILLETERA</h1>
-		<a href="bancochilemipago://TarjetasDigitales?tab=2"><h4 style="color: #ffffff">bancochilemipago://TarjetasDigitales?tab=2</h4></a>
-	</br>
-	</br>
-		<h1 style="color: #ffffff">PagoQR con ingreso codigo Manual y otros params</h1>
-		<a href="bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar"><h4 style="color: #ffffff">bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar</h4></a>
-	</br>
-	</br>
-		<h1 style="color: #ffffff">Dynamic Link para TBK</h1>
-		<a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode=B2457574?screen=PagoTBK&apn=cl.bancochile.mi_pago&isi=B2386797&ibi=cl.bancochile.mipago&efr=1"><h4 style="color: #ffffff">1- B2457574</h4></a>
-		<!--<a href="https://mipago.page.link/PagoQrTBK?simpleCode=A8844884"><h4 style="color: #ffffff">2- https://mipago.page.link/PagoQrTBK?simpleCode=A8844884</h4></a>-->
-		<!--
-	</br>
-		-->
-	</br>
-		<h1>DYNAMIC LINK MI BANCO</h1>
-		<a href="https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr?simpleCode=C6370032?screen=PagoTBK?appID=Tbk&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1"><h4>1- Clicka</h4></a>
-		
-	</br>
-		 
-	</br>
-		<h1>Generador Dynamic Link</h1>
-		
+  </br>
+  </br>
+    <h1 style="color: #ffffff">DeepLink BILLETERA</h1>
+    <a href="bancochilemipago://TarjetasDigitales?tab=2"><h4 style="color: #ffffff">bancochilemipago://TarjetasDigitales?tab=2</h4></a>
+  </br>
+  </br>
+    <h1 style="color: #ffffff">PagoQR con ingreso codigo Manual y otros params</h1>
+    <a href="bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar"><h4 style="color: #ffffff">bancochilemipago://PagoQR?showIngresarCodigoManual=true&appID=MiBanco&isFakeParam=true&foo=bar</h4></a>
+  </br>
+  </br>
+    <h1 style="color: #ffffff">Dynamic Link para TBK</h1>
+    <a href="https://mipago.page.link/?link=https://portales.bancochile.cl/personas/mi-pago-2-0?simpleCode=B2457574?screen=PagoTBK&apn=cl.bancochile.mi_pago&isi=B2386797&ibi=cl.bancochile.mipago&efr=1"><h4 style="color: #ffffff">1- B2457574</h4></a>
+    <!--<a href="https://mipago.page.link/PagoQrTBK?simpleCode=A8844884"><h4 style="color: #ffffff">2- https://mipago.page.link/PagoQrTBK?simpleCode=A8844884</h4></a>-->
+    <!--
+  </br>
+    -->
+  </br>
+    <h1>DYNAMIC LINK MI BANCO</h1>
+    <a href="https://mibanco3.page.link/?link=https://mibanco3.page.link/pagoqr?simpleCode=C6370032?screen=PagoTBK?appID=Tbk&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3&efr=1"><h4>1- Clicka</h4></a>
+    
+  </br>
+     
+  </br>
+    <h1>Generador Dynamic Link</h1>
+    
 
-	</br>
+  </br>
 
-		<p>Recomendaciones (borrar las {{}}) <p>
-		<p>*** NUEVO2 *** Tbk = <code>{{pagoqr?simpleCode=C6370032?screen=PagoTBK?appID=Tbk}}</code></p>
-		<p>Tbk Ingreso manual qr = <code>{{showIngresarCodigoManual=true?screen=PagoQR?appID=Tbk}}</code></p>
-		<p>Bcx = <code>{{codigoQr=B2374455?screen=PagoQrBcx?appID=Bcx}}</code></p>
-		<p>Billetera = <code>{{tab=2?screen=TarjetasDigitales}}</code></p>
-		
-	</br>
-	<input id="paramsUrl">
-	<a id="urlClick"><h2>Url generado :</h2><h2 id="urlChange"></h2></a>
+    <p>Recomendaciones (borrar las {{}}) <p>
+    <p>*** NUEVO2 *** Tbk = <code>{{pagoqr?simpleCode=C6370032?screen=PagoTBK?appID=Tbk}}</code></p>
+    <p>Tbk Ingreso manual qr = <code>{{showIngresarCodigoManual=true?screen=PagoQR?appID=Tbk}}</code></p>
+    <p>Bcx = <code>{{codigoQr=B2374455?screen=PagoQrBcx?appID=Bcx}}</code></p>
+    <p>Billetera = <code>{{tab=2?screen=TarjetasDigitales}}</code></p>
+    
+  </br>
+  <input id="paramsUrl">
+  <a id="urlClick"><h2>Url generado :</h2><h2 id="urlChange"></h2></a>
 
-		<button onClick="changeText($("input").val())" ></button>
-	</body>
+    <button onClick="clickButton()" > Help!!!</button>
+  </body>
 </html>
