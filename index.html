@@ -17,10 +17,13 @@ function clickButton() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  
+  const input = document.querySelector("#paramsUrl");
+  const input2 = document.querySelector("#paramsUrl2");
   input.addEventListener("change", function () {
     changeText(this.value);
   });
-  input.addEventListener("change", function () {
+  input2.addEventListener("change", function () {
     changeText2(this.value);
   });
 });
@@ -115,7 +118,7 @@ function clickButton2() {
   <br/><br/><br/><br/>
 
   <input id="paramsUrl2">
-  <a id="urlClick2"><h2>Url generado2 :</h2><h2 id="urlChange2"></h2></a>
+  <a id="urlClick2"><h2>Url generado3 :</h2><h2 id="urlChange2"></h2></a>
     <button onClick="clickButton2()" > Help!!!</button>
   </body>
 </html>
