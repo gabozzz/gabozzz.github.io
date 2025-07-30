@@ -3,8 +3,6 @@
 
   <head>
     <title>ENLACE DIRECTO TBK</title>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 function changeText(texto) {
   // ...comentarios originales...
@@ -27,6 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+  function changeText2(texto) {
+  // ...comentarios originales...
+  // let urlFinal = "https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3";
+  let urlFinal = "https://deeplink.web5qa.test.transbank.cl/webpayserver/" + texto;
+  document.getElementById("urlChange2").textContent = urlFinal;
+  document.getElementById("urlClick2").setAttribute('href', urlFinal);
+}
+
+function clickButton2() {
+  const input = document.querySelector("input2");
+  changeText(input.value);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.querySelector("input2");
+  input.addEventListener("change", function () {
+    changeText2(this.value);
+  });
+});
 </script>
 
   </head>
@@ -97,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </br>
   <input id="paramsUrl">
   <a id="urlClick"><h2>Url generadox :</h2><h2 id="urlChange"></h2></a>
-
     <button onClick="clickButton()" > Help!!!</button>
   </body>
 </html>
