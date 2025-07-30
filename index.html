@@ -6,7 +6,6 @@
 <script>
 function changeText(texto) {
   // ...comentarios originales...
-  // let urlFinal = "https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3";
   let urlFinal = "https://mibanco3.web.app/" + texto;
   document.getElementById("urlChange").textContent = urlFinal;
   document.getElementById("urlClick").setAttribute('href', urlFinal);
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function changeText2(texto) {
   // ...comentarios originales...
-  // let urlFinal = "https://mibanco.page.link/?link=https://portales.bancochile.cl/personas/mi-banco?"+texto+"&apn=cl.bancochile.mi_banco&isi=1516872542&ibi=cl.bancochile.mibanco3";
   let urlFinal = "https://deeplink.web5qa.test.transbank.cl/webpayserver/" + texto;
   document.getElementById("urlChange2").textContent = urlFinal;
   document.getElementById("urlClick2").setAttribute('href', urlFinal);
