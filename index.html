@@ -12,15 +12,16 @@ function changeText(texto) {
 }
 
 function clickButton() {
-  const input = document.querySelector("input");
+  const input = document.querySelector("paramsUrl");
   changeText(input.value);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const input = document.querySelector("input");
   input.addEventListener("change", function () {
     changeText(this.value);
-    // alert("The text has been changed." + this.value);
+  });
+  input.addEventListener("change", function () {
+    changeText2(this.value);
   });
 });
 
@@ -34,16 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 function clickButton2() {
-  const input = document.querySelector("input2");
+  const input = document.querySelector("paramsUrl2");
   changeText(input.value);
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const input = document.querySelector("input2");
-  input.addEventListener("change", function () {
-    changeText2(this.value);
-  });
-});
 </script>
 
   </head>
@@ -121,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <br/><br/><br/><br/>
 
   <input id="paramsUrl2">
-  <a id="urlClick2"><h2>Url generado2s :</h2><h2 id="urlChange2"></h2></a>
+  <a id="urlClick2"><h2>Url generado2 :</h2><h2 id="urlChange2"></h2></a>
     <button onClick="clickButton2()" > Help!!!</button>
   </body>
 </html>
