@@ -20,11 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   const input = document.querySelector("#paramsUrl");
   const input2 = document.querySelector("#paramsUrl2");
+  const input3 = document.querySelector("#paramsUrl3");
   input.addEventListener("change", function () {
     changeText(this.value);
   });
   input2.addEventListener("change", function () {
     changeText2(this.value);
+  });
+    input3.addEventListener("change", function () {
+    changeText3(this.value);
   });
 });
 
@@ -39,6 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function clickButton2() {
   const input = document.querySelector("#paramsUrl2");
+  changeText(input.value);
+}
+
+  function changeText3(texto) {
+  // ...comentarios originales...
+  let urlFinal = "mibanco://" + texto;
+  document.getElementById("urlChange3").textContent = urlFinal;
+  document.getElementById("urlClick3").setAttribute('href', urlFinal);
+}
+
+function clickButton3() {
+  const input = document.querySelector("#paramsUrl3");
   changeText(input.value);
 }
 </script>
@@ -118,7 +134,19 @@ function clickButton2() {
   <br/><br/><br/><br/>
 
   <input id="paramsUrl2">
+
+    
   <a id="urlClick2"><h2>Url generado2 :</h2><h2 id="urlChange2"></h2></a>
     <button onClick="clickButton2()" > Help!!!</button>
+<br/><br/>
+
+        <p>DEEPLINK </code></p>
+
+    <p>{{screen=ModalCobrosPagos}}</code></p>
+      <input id="paramsUrl3">
+
+    
+  <a id="urlClick2"><h2>Url generado3 :</h2><h2 id="urlChange3"></h2></a>
+    <button onClick="clickButton3()" > Help!!!</button>
   </body>
 </html>
